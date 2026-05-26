@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>人生路况 Preview</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="人生路况结果页预览">
+      <section class="app-screen">
+        <header class="topbar">
+          <div>
+            <p class="overline">今日 · 静态导航图</p>
+            <h1>人生路况</h1>
+          </div>
+          <div class="top-actions" aria-label="页面操作">
+            <button class="icon-button" type="button" aria-label="刷新">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11a8 8 0 1 0-2.34 5.66" />
+                <path d="M20 5v6h-6" />
+              </svg>
+            </button>
+            <button class="icon-button" type="button" aria-label="分享">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" />
+                <path d="M12 16V4" />
+                <path d="m7 9 5-5 5 5" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="map-region" aria-label="人生路况导航图">
+          <svg id="lifeMap" class="life-map" viewBox="0 0 390 572" role="img" aria-labelledby="mapTitle mapDesc">
+            <title id="mapTitle">人生路况导航图</title>
+            <desc id="mapDesc">从你在这里出发，到今日目标状态回升，展示稳妥路、快速路和绕行路三条路线。</desc>
+          </svg>
+        </section>
+
+        <section class="route-sheet" aria-label="路线选择">
+          <div class="sheet-handle" aria-hidden="true"></div>
+          <div class="sheet-header">
+            <div>
+              <p class="sheet-label">选择今天的路线</p>
+              <strong id="selectedSummary">A 稳妥路 · 推荐</strong>
+            </div>
+            <span class="confidence">基础精度</span>
+          </div>
+
+          <div id="routeCards" class="route-cards" role="tablist" aria-label="路线 A B C"></div>
+
+          <div id="mapDetail" class="map-detail" aria-live="polite"></div>
+
+          <div class="instruction-bar">
+            <div>
+              <p id="instructionTitle">导航指令：走 A 稳妥路</p>
+              <span id="instructionBody">保持车道，低速通过风险段，20:00 后小步加速</span>
+            </div>
+            <button type="button">生成分享卡</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+{
+  "generated_at": "2026-05-20T18:41:49",
+  "packages": {
+    "lunar-python": "1.4.8",
+    "sxtwl": "2.0.7",
+    "cnlunar": "0.2.4"
+  },
+  "cases": [
+    {
+      "case_id": "today_shanghai",
+      "datetime": "2026-05-20 17:00",
+      "reason": "current project date; normal day; 酉时",
+      "lunar_python": {
+        "lunar_text": "二〇二六年四月初四",
+        "calendar_year_gz": "丙午",
+        "calendar_month_gz": "癸巳",
+        "year_gz": "丙午",
+        "month_gz": "癸巳",
+        "day_gz": "甲午",
+        "time_gz": "癸酉",
+        "jieqi": "",
+        "eight_char": "丙午 癸巳 甲午 癸酉"
+      },
+      "sxtwl": {
+        "lunar_year": 2026,
+        "lunar_month": 4,
+        "lunar_day": 4,
+        "is_leap_month": false,
+        "year_gz": "丙午",
+        "month_gz": "癸巳",
+        "day_gz": "甲午",
+        "time_gz": "癸酉"
+      },
+      "cnlunar": {
+        "lunar_year": 2026,
+        "lunar_month": 4,
+        "lunar_day": 4,
+        "year_gz": "丙午",
+        "month_gz": "癸巳",
+        "day_gz": "甲午",
+        "time_gz": "癸酉",
+        "today_solar_terms": "无",
+        "next_solar_term": "小满"
+      },
+      "gz_consistency": {
+        "year_gz": true,
+        "month_gz": true,
+        "day_gz": true,
+        "time_gz": true
+      }
+    },
+    {
+      "case_id": "mingli_case_1",
+      "datetime": "1974-04-28 16:40",
+      "reason": "MingLi-Bench sample birth time",
+      "lunar_python": {
+        "lunar_text": "一九七四年四月初七",
+        "calendar_year_gz": "甲寅",
+        "calendar_month_gz": "戊辰",
+        "year_gz": "甲寅",
+        "month_gz": "戊辰",
+        "day_gz": "己亥",
+        "time_gz": "壬申",
+        "jieqi": "",
+        "eight_char": "甲寅 戊辰 己亥 壬申"
+      },
+      "sxtwl": {
+        "lunar_year": 1974,
+        "lunar_month": 4,
+        "lunar_day": 7,
+        "is_leap_month": false,
+        "year_gz": "甲寅",
+        "month_gz": "戊辰",
+        "day_gz": "己亥",
+        "time_gz": "壬申"
+      },
+      "cnlunar": {
+        "lunar_year": 1974,
+        "lunar_month": 4,
+        "lunar_day": 7,
+        "year_gz": "甲寅",
+        "month_gz": "戊辰",
+        "day_gz": "己亥",
+        "time_gz": "壬申",
+        "today_solar_terms": "无",
+        "next_solar_term": "立夏"
+      },
+      "gz_consistency": {
+        "year_gz": true,
+        "month_gz": true,
+        "day_gz": true,
+        "time_gz": true
+      }
+    },
+    {
+      "case_id": "cny_2024",
+      "datetime": "2024-02-10 09:00",
+      "reason": "Chinese New Year boundary",
+      "lunar_python": {
+        "lunar_text": "二〇二四年正月初一",
+        "calendar_year_gz": "甲辰",
+        "calendar_month_gz": "丙寅",
+        "year_gz": "甲辰",
+        "month_gz": "丙寅",
+        "day_gz": "甲辰",
+        "time_gz": "己巳",
+        "jieqi": "",
+        "eight_char": "甲辰 丙寅 甲辰 己巳"
+      },
+      "sxtwl": {
+        "lunar_year": 2024,
+        "lunar_month": 1,
+        "lunar_day": 1,
+        "is_leap_month": false,
+        "year_gz": "甲辰",
+        "month_gz": "丙寅",
+        "day_gz": "甲辰",
+        "time_gz": "己巳"
+      },
+      "cnlunar": {
+        "lunar_year": 2024,
+        "lunar_month": 1,
+        "lunar_day": 1,
+        "year_gz": "甲辰",
+        "month_gz": "丙寅",
+        "day_gz": "甲辰",
+        "time_gz": "己巳",
+        "today_solar_terms": "无",
+        "next_solar_term": "雨水"
+      },
+      "gz_consistency": {
+        "year_gz": true,
+        "month_gz": true,
+        "day_gz": true,
+        "time_gz": true
+      }
+    },
+    {
+      "case_id": "lichun_2024_before",
+      "datetime": "2024-02-04 15:00",
+      "reason": "立春 date boundary before common afternoon transition",
+      "lunar_python": {
+        "lunar_text": "二〇二三年腊月廿五",
+        "calendar_year_gz": "癸卯",
+        "calendar_month_gz": "丙寅",
+        "year_gz": "癸卯",
+        "month_gz": "乙丑",
+        "day_gz": "戊戌",
+        "time_gz": "庚申",
+        "jieqi": "立春",
+        "eight_char": "癸卯 乙丑 戊戌 庚申"
+      },
+      "sxtwl": {
+        "lunar_year": 2023,
+        "lunar_month": 12,
+        "lunar_day": 25,
+        "is_leap_month": false,
+        "year_gz": "甲辰",
+        "month_gz": "丙寅",
+        "day_gz": "戊戌",
+        "time_gz": "庚申"
+      },
+      "cnlunar": {
+        "lunar_year": 2023,
+        "lunar_month": 12,
+        "lunar_day": 25,
+        "year_gz": "甲辰",
+        "month_gz": "丙寅",
+        "day_gz": "戊戌",
+        "time_gz": "庚申",
+        "today_solar_terms": "立春",
+        "next_solar_term": "雨水"
+      },
+      "gz_consistency": {
+        "year_gz": false,
+        "month_gz": false,
+        "day_gz": true,
+        "time_gz": true
+      }
+    },
+    {
+      "case_id": "millennium",
+      "datetime": "2000-01-01 00:30",
+      "reason": "子时 and century date smoke test",
+      "lunar_python": {
+        "lunar_text": "一九九九年冬月廿五",
+        "calendar_year_gz": "己卯",
+        "calendar_month_gz": "丙子",
+        "year_gz": "己卯",
+        "month_gz": "丙子",
+        "day_gz": "戊午",
+        "time_gz": "壬子",
+        "jieqi": "",
+        "eight_char": "己卯 丙子 戊午 壬子"
+      },
+      "sxtwl": {
+        "lunar_year": 1999,
+        "lunar_month": 11,
+        "lunar_day": 25,
+        "is_leap_month": false,
+        "year_gz": "己卯",
+        "month_gz": "丙子",
+        "day_gz": "戊午",
+        "time_gz": "壬子"
+      },
+      "cnlunar": {
+        "lunar_year": 1999,
+        "lunar_month": 11,
+        "lunar_day": 25,
+        "year_gz": "己卯",
+        "month_gz": "丙子",
+        "day_gz": "戊午",
+        "time_gz": "壬子",
+        "today_solar_terms": "无",
+        "next_solar_term": "小寒"
+      },
+      "gz_consistency": {
+        "year_gz": true,
+        "month_gz": true,
+        "day_gz": true,
+        "time_gz": true
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 5,
+    "all_gz_consistent": false
+  }
+}

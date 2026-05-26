@@ -1,0 +1,35 @@
+[
+  {
+    "id": "baziqa",
+    "name": "BaziQA / BAZIQA-BENCHMARK",
+    "type": "external_benchmark",
+    "status": "candidate",
+    "size": 200,
+    "use": "评估模型对八字结构化推理题的表现，不直接进入用户结果生成",
+    "url": "https://github.com/ChenJiangxi/BaziQA"
+  },
+  {
+    "id": "auramate_live_benchmark",
+    "name": "AuraMate BaziQA Live Benchmark",
+    "type": "leaderboard",
+    "status": "candidate",
+    "use": "观察模型在 BaziQA 上的公开表现，不作为产品规则来源",
+    "url": "https://auramate.net/benchmark"
+  },
+  {
+    "id": "mingli_bench",
+    "name": "MingLi-Bench",
+    "type": "research_benchmark",
+    "status": "candidate",
+    "use": "观察术数自动化推理环境和工具化评测方式",
+    "url": "https://destinylinker.github.io/MingLi-Bench/"
+  },
+  {
+    "id": "golden_cases_internal",
+    "name": "Project Mystery Golden Cases",
+    "type": "internal_eval",
+    "status": "planned",
+    "use": "Peter 审核后的产品级案例集，用于检查输出可读性、边界和规则一致性",
+    "url": "local"
+  }
+]

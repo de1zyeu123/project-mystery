@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>人生路况 MVP</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./vendor/maplibre-gl.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="人生路况 MVP 本地测试">
+      <section id="inputScreen" class="app-screen input-screen">
+        <header class="hero">
+          <p>本地 MVP · 规则引擎验证</p>
+          <h1>人生路况</h1>
+          <span>输入少量信息，生成今日导航。</span>
+        </header>
+
+        <form id="lifeForm" class="form-panel">
+          <label>
+            <span>出生日期</span>
+            <input id="birthDate" type="date" required value="1996-04-18" />
+          </label>
+
+          <label>
+            <span>出生时间</span>
+            <input id="birthTime" type="time" value="08:30" />
+          </label>
+
+          <label>
+            <span>出生地</span>
+            <input id="birthplace" type="text" value="杭州" placeholder="例如：杭州" />
+          </label>
+
+          <label>
+            <span>性别</span>
+            <select id="gender">
+              <option value="unknown">暂不填写</option>
+              <option value="female" selected>女</option>
+              <option value="male">男</option>
+              <option value="other">其他</option>
+            </select>
+          </label>
+
+          <label class="full">
+            <span>今天想问哪件事</span>
+            <textarea id="question" rows="2">今天适合推进工作吗？</textarea>
+          </label>
+
+          <div class="quick-questions" aria-label="快捷问题">
+            <button type="button">今天适合干什么？</button>
+            <button type="button">今天要不要变道？</button>
+            <button type="button">今天适合联系 TA 吗？</button>
+            <button type="button">今天能不能谈钱？</button>
+          </div>
+
+          <button class="primary-button" type="submit">生成今日导航</button>
+        </form>
+
+        <footer class="mvp-note">
+          使用 `lunar-javascript` 计算干支、节气、宜忌。当前为 v1 产品验证版。
+        </footer>
+      </section>
+
+      <section id="resultScreen" class="app-screen result-screen hidden">
+        <header class="topbar">
+          <div class="title-stack">
+            <p class="overline" id="resultOverline">今日 · 互动导航图</p>
+            <h1 id="resultHeadline">今日路况</h1>
+            <span id="resultSubline">先看结论，再选路线。</span>
+          </div>
+          <div class="top-actions">
+            <button id="backButton" class="icon-button" type="button" aria-label="返回输入">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <button id="traceButton" class="icon-button" type="button" aria-label="查看生成逻辑">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20h9" />
+                <path d="M12 4h9" />
+                <path d="M4 9h16" />
+                <path d="M4 15h16" />
+                <path d="M4 4h.01" />
+                <path d="M4 20h.01" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+        <section class="map-region">
+          <div class="map-verdict" aria-live="polite">
+            <strong id="verdictPill">今日答案</strong>
+            <span id="verdictAction">保持车道</span>
+            <span id="verdictRisk">风险可控</span>
+          </div>
+          <div id="lifeMap" class="life-map" role="img" aria-label="人生路况导航图"></div>
+          <div id="mapLoading" class="map-loading">地图加载中</div>
+        </section>
+
+        <section class="route-sheet">
+          <div class="sheet-handle" aria-hidden="true"></div>
+          <div class="sheet-header">
+            <div>
+              <p class="sheet-label">今日答案</p>
+              <strong id="selectedSummary">A 稳妥路 · 推荐</strong>
+            </div>
+            <span id="confidenceBadge" class="confidence">标准精度</span>
+          </div>
+
+          <div id="decisionBoard" class="decision-board" aria-label="今日行动建议"></div>
+          <div id="routeCards" class="route-cards" role="tablist" aria-label="路线 A B C"></div>
+          <div id="scoreStrip" class="score-strip"></div>
+          <div id="mapDetail" class="map-detail" aria-live="polite"></div>
+
+          <div class="instruction-bar">
+            <div>
+              <p id="instructionTitle">导航指令</p>
+              <span id="instructionBody">保持车道。</span>
+            </div>
+            <button id="shareButton" type="button">生成分享卡</button>
+          </div>
+        </section>
+        <div id="shareToast" class="share-toast hidden">今日答案已准备</div>
+      </section>
+
+      <section id="tracePanel" class="trace-panel hidden" aria-label="生成逻辑">
+        <div class="trace-card">
+          <header>
+            <strong>为什么是这个结果</strong>
+            <button id="closeTrace" type="button">关闭</button>
+          </header>
+          <div id="traceOutput" class="evidence-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./vendor/maplibre-gl.js"></script>
+    <script src="./vendor/lunar.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

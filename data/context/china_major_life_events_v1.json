@@ -1,0 +1,102 @@
+[
+  {
+    "id": "reform_opening",
+    "title": "改革开放",
+    "year": 1978,
+    "regions": ["全国"],
+    "minAge": 8,
+    "maxAge": 35,
+    "weight": 3,
+    "lens": "市场化和机会意识"
+  },
+  {
+    "id": "southern_tour",
+    "title": "南方谈话",
+    "year": 1992,
+    "regions": ["全国", "广东", "深圳", "上海"],
+    "minAge": 12,
+    "maxAge": 45,
+    "weight": 2,
+    "lens": "变化窗口和行动机会"
+  },
+  {
+    "id": "housing_reform",
+    "title": "住房制度改革",
+    "year": 1998,
+    "regions": ["全国", "上海", "北京", "广州", "深圳"],
+    "minAge": 18,
+    "maxAge": 50,
+    "weight": 2,
+    "lens": "安全感和资产观"
+  },
+  {
+    "id": "wto",
+    "title": "加入 WTO",
+    "year": 2001,
+    "regions": ["全国", "上海", "广东", "浙江", "江苏"],
+    "minAge": 12,
+    "maxAge": 45,
+    "weight": 2,
+    "lens": "外部机会和职业选择"
+  },
+  {
+    "id": "sars",
+    "title": "非典",
+    "year": 2003,
+    "regions": ["全国", "北京", "广东"],
+    "minAge": 8,
+    "maxAge": 45,
+    "weight": 2,
+    "lens": "公共风险和不确定性"
+  },
+  {
+    "id": "wenchuan",
+    "title": "汶川地震",
+    "year": 2008,
+    "regions": ["全国", "四川", "成都", "重庆"],
+    "minAge": 8,
+    "maxAge": 50,
+    "weight": 3,
+    "lens": "韧性和风险感知"
+  },
+  {
+    "id": "beijing_olympics",
+    "title": "北京奥运",
+    "year": 2008,
+    "regions": ["全国", "北京"],
+    "minAge": 6,
+    "maxAge": 35,
+    "weight": 1,
+    "lens": "集体记忆和目标感"
+  },
+  {
+    "id": "shanghai_expo",
+    "title": "上海世博",
+    "year": 2010,
+    "regions": ["上海", "江苏", "浙江"],
+    "minAge": 6,
+    "maxAge": 35,
+    "weight": 1,
+    "lens": "城市开放和流动性"
+  },
+  {
+    "id": "mobile_payment",
+    "title": "移动支付普及",
+    "year": 2015,
+    "regions": ["全国", "浙江", "杭州", "广东", "深圳"],
+    "minAge": 12,
+    "maxAge": 55,
+    "weight": 1,
+    "lens": "效率感和数字生活"
+  },
+  {
+    "id": "covid",
+    "title": "新冠疫情",
+    "year": 2020,
+    "regions": ["全国", "湖北", "武汉", "上海", "北京"],
+    "minAge": 6,
+    "maxAge": 70,
+    "weight": 3,
+    "lens": "边界感和风险控制"
+  }
+]

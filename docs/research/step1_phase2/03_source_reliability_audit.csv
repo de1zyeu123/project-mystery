@@ -1,0 +1,11 @@
+source,type,license,verified_signal,approved_use,restriction,verdict
+lunar-python,calculation_engine,MIT,"installed 1.4.8; package metadata; smoke tests",MVP backend calculation,"needs expanded boundary test and Peter reference check",approve_for_test
+lunar-javascript,calculation_engine,MIT,"npm latest 1.7.7; package metadata",TypeScript calculation candidate,"needs parity test with lunar-python",approve_for_test
+sxtwl,validation_engine,BSD,"installed 2.0.7; precise JieQi time available",solar-term validation,"do not use date-level fromSolar pillar output as final birth-chart authority",approve_for_validation
+cnlunar,validation_engine,MIT,"installed 0.2.4; broad almanac metadata",Huangli and almanac validation,"boundary behavior needs caution",approve_for_validation
+iztro,advanced_engine,MIT,"npm latest 2.5.8; active package",Zi Wei module later,"not MVP; interpretation requires Peter approval",phase2_only
+MingLi-Bench,benchmark,MIT in repo,"public repo; 160 questions; 32 cases; official competition source stated",internal benchmark,"do not use for marketing, training, or user-facing raw content until rights review",approve_internal_only
+HKJFMA competition pages,source_verification,unclear,"official 2025 competition page accessible; older question/answer pages visible",existence verification,"do not ingest or redistribute direct material without rights review",reference_only
+BaziQA-Benchmark,research_reference,paper license only,"arXiv paper derives benchmark from 2021-2025 competition problems",methodology reference,"not product data",reference_only
+starnum-bench,method_reference,CC BY 4.0 stated on page,"public benchmark page; direct JSON blocked locally",golden-test methodology,"not MVP data source",reference_only
+annual master rankings,market_reference,unclear,"SEO/top-list pages found",market language only,"not authority; not source of truth",reject_as_authority
