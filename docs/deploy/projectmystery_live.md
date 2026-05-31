@@ -4,7 +4,8 @@
 
 - Public path: `https://de1zyeu.tech/projectmystery/`
 - Primary deploy: Vercel project `project-mystery`
-- Public route on `de1zyeu.tech`: Vercel project-level redirect from `online-financial-agent`
+- Public route on `de1zyeu.tech`: Vercel project-level rewrite from `online-financial-agent`
+- Keep `NoToast` (`/notoast`) independent from `Project Mystery` (`/projectmystery`) when editing routes.
 - Local fallback: Docker container `project-mystery` on port `4173`
 
 ## Runtime Env
@@ -33,16 +34,15 @@ Deploy this project:
 npx --yes vercel deploy --prod --yes
 ```
 
-Then publish project-level routes on the `de1zyeu.tech` owner project:
+Then publish project-level routes on the `de1zyeu.tech` owner project. Use rewrites so the browser stays on `de1zyeu.tech`:
 
 ```bash
 npx --yes vercel routes add "Project Mystery Root" \
   --cwd "/Users/zhen/Desktop/Agent/Online Financial Agent/website/web" \
   --src "/projectmystery" \
   --src-syntax equals \
-  --action redirect \
+  --action rewrite \
   --dest "https://<project-mystery-production-url>/projectmystery/" \
-  --status 308 \
   --position start \
   --yes
 
@@ -50,9 +50,8 @@ npx --yes vercel routes add "Project Mystery App" \
   --cwd "/Users/zhen/Desktop/Agent/Online Financial Agent/website/web" \
   --src "^/projectmystery/(.*)$" \
   --src-syntax regex \
-  --action redirect \
+  --action rewrite \
   --dest "https://<project-mystery-production-url>/projectmystery/$1" \
-  --status 308 \
   --position start \
   --yes
 
