@@ -1,0 +1,80 @@
+Authoritative inputs:
+- topology_blueprint_from_user_v1.json
+- topology_blueprint_from_user_v1.svg
+- route_story_config_v4.json
+- docs/logic/v4_story_route_semantics.md
+
+Goal:
+Create a clean production base map for `人生路况`.
+
+Core rule:
+The confirmed topology and storyline are authoritative. The map must be topology-first and story-driven.
+
+Confirmed node layout:
+- 0 bottom-left start plaza
+- 1 above 0 on the left side
+- 2 lower-center, slightly right of 0
+- 3 left-middle above 1
+- 4 center
+- 5 bottom-middle, below 4 and right of 2
+- 6 upper-left below mountains
+- 7 central upper plain
+- 8 right-middle highland below lighthouse
+- 9 lower-right before endpoint
+- 10-left upper-left mountain terminal
+- 11 upper-right lighthouse terminal
+- 10-right lower-right terminal
+
+Exact route graph:
+1. 0 -> 1: bridge into forest, story `走捷径`
+2. 0 -> 2: ordinary plain road, story `走平原`
+3. 1 -> 3: forest bridge route, story `深入森林`
+4. 1 -> 4: bridge back to main route, story `过桥回主路`
+5. 3 -> 6: uphill forest climb, story `爬小山`
+6. 6 -> 10-left: mountain terminal, story `翻山收束`
+7. 3 -> 7: small bridge into central plain, story `过桥入平原`
+8. 7 -> 11: long plain route to lighthouse, story `平路到灯塔`
+9. 4 -> 7: stable central route, story `沿主路慢走`
+10. 4 -> 8: faster route to right-middle highland, story `抄近路上高台`
+11. 8 -> 11: ladder or stairs to lighthouse highland, story `爬梯到灯塔`
+12. 2 -> 4: ordinary central route, story `走向主路`
+13. 2 -> 5: cliff-side shortcut route, story `贴崖试路`
+14. 5 -> 8: critical upward/right return route, story `回到坦途`
+15. 5 -> 9: separate lower-right ladder/stair route, story `爬梯过坎`
+16. 9 -> 10-right: lower-right terminal, story `梯后坦途`
+
+Story terrain:
+- 0 is a beginning plaza with two first choices.
+- Left branch enters forest, crosses bridges, and climbs to mountain challenge.
+- Central branch is open grass/plain terrain.
+- 4 is the central decision hub.
+- 5 is the risky cliff-side decision point.
+- 5 -> 8 must climb diagonally upward/right back to right-middle highland.
+- 5 -> 9 must stay separate as the lower-right risky route.
+- 8 is a highland/threshold platform.
+- 11 is the lighthouse stable terminal.
+- 10-left is mountain challenge terminal.
+- 10-right is risk-controlled shortcut terminal.
+
+Visual style:
+- isometric 2.5D miniature board-game map
+- rounded clay/plastic toy terrain
+- cream stone roads and circular pads
+- moss green grass
+- sky-blue water
+- warm tan cliff layers
+- cocoa-brown outlines
+- small trees, rocks, flowers, waterfalls
+- soft top-left lighting
+- mobile-readable route shapes
+
+Hard exclusions:
+- no text
+- no numbers
+- no yellow guide lines
+- no blue label boxes
+- no arrows
+- no UI overlays
+- no people or characters
+- no logos
+- no extra paths or decorative loops

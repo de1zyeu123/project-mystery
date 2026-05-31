@@ -1,0 +1,56 @@
+Authoritative inputs:
+- docs/logic/v5_route_meaning_and_possibilities.md
+- topology_blueprint_from_user_v2.json
+- route_story_config_v5.json
+
+User corrections:
+- Upper-left mountain terminal is node 10.
+- Upper-right lighthouse terminal is node 11.
+- Lower-right cliff shortcut terminal is node 12.
+- Do not use 10A or 10B.
+- Route 4 -> 8 does not need a ladder.
+- Route 8 -> 11 needs a ladder or stairs.
+
+Goal:
+Design a clean production base map in a fresh Monopoly-like board-game plus cheerful 3D platformer map feel. It should read like a bright toy 3D world map, without any characters or IP.
+
+Exact route graph:
+1. 0 -> 1: bridge into forest, `走捷径`
+2. 0 -> 2: plain main road, `走平原`
+3. 1 -> 3: forest bridge route, `深入森林`
+4. 1 -> 4: bridge back to main route, `过桥回主路`
+5. 3 -> 6: uphill forest/mountain challenge, `爬小山`
+6. 6 -> 10: mountain challenge endpoint, `翻山收束`
+7. 3 -> 7: small bridge into central plain, `过桥入平原`
+8. 7 -> 11: long stable route to lighthouse, `平路到灯塔`
+9. 4 -> 7: central steady route, `沿主路慢走`
+10. 4 -> 8: fast road to right-middle highland, no ladder, `抄近路上高台`
+11. 8 -> 11: ladder or stairs to lighthouse highland, `爬梯到灯塔`
+12. 2 -> 4: ordinary central route, `走向主路`
+13. 2 -> 5: cliff-side shortcut, `贴崖试路`
+14. 5 -> 8: return route from risk node back upward/right to stable highland path, `回到坦途`
+15. 5 -> 9: separate lower-right route with ladder/stairs, `爬梯过坎`
+16. 9 -> 12: lower-right terminal path, `梯后坦途`
+
+Style:
+- clean 3D board-game platform map
+- cheerful bright toy-like 3D world
+- cream stone roads and circular pads
+- moss green grass
+- sky-blue water
+- warm tan cliff layers
+- cocoa-brown outlines
+- small trees, rocks, flowers, waterfalls
+- soft top-left lighting and gentle shadows
+- route clarity first
+
+Hard exclusions:
+- no text
+- no numbers
+- no yellow guide lines
+- no blue label boxes
+- no arrows
+- no UI overlays
+- no people or characters
+- no logos
+- no extra paths or loops

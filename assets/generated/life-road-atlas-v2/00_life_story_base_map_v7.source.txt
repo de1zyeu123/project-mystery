@@ -1,0 +1,62 @@
+Use the user's annotated route map as the authoritative routing blueprint.
+
+Regenerate the base map from scratch, topology-first. The road network is the product.
+
+Core constraints:
+- Draw only the user-defined routes.
+- Do not invent extra roads, shortcuts, loops, or disconnected platforms.
+- Use cream stone roads and round plaza pads at decision/terminal positions.
+- Do not show numbers or labels.
+
+Exact route graph:
+1. 0 -> 1: bottom-left start platform to left-side forest route via a bridge.
+2. 0 -> 2: bottom-left start platform to lower central plain.
+3. 1 -> 3: left-side forest route upward to left-middle forest node, with bridge crossing.
+4. 1 -> 4: bridge from left side into central island.
+5. 3 -> 6: forest/rock uphill route with stairs or steep path.
+6. 6 -> 10-left: upper-left mountain terminal.
+7. 3 -> 7: small bridge into central upper plain.
+8. 7 -> 11: long route to upper-right lighthouse terminal.
+9. 4 -> 7: central route upward.
+10. 4 -> 8: central route to right-middle highland.
+11. 8 -> 11: ladder/stairs to lighthouse highland.
+12. 2 -> 4: ordinary central route.
+13. 2 -> 5: cliff-side shortcut route to bottom-middle.
+14. 5 -> 8: critical upward/right route from bottom-middle to right-middle highland; separate from the lower-right route.
+15. 5 -> 9: separate lower-right route with ladder/stairs.
+16. 9 -> 10-right: lower-right terminal route.
+
+Required layout:
+- 0: large start plaza at bottom-left.
+- 1: above 0 on left side.
+- 2: lower-center, slightly right of 0.
+- 3: left-middle above 1.
+- 4: center.
+- 5: bottom-middle, below 4 and right of 2.
+- 6: upper-left below mountains.
+- 7: central upper plain.
+- 8: right-middle highland below lighthouse.
+- 9: lower-right before lower-right endpoint.
+- 10-left: upper-left mountain terminal.
+- 11: upper-right lighthouse terminal.
+- 10-right: lower-right terminal.
+
+Style:
+- isometric 2.5D miniature board-game map
+- rounded clay/plastic toy terrain
+- cream stone roads
+- circular decision pads
+- warm tan cliff layers
+- moss green grass
+- sky-blue water
+- small flowers, rocks, and trees
+- soft lighting and mobile-readable route shapes
+
+Remove all annotation artifacts:
+- no yellow guide lines
+- no numbered circles
+- no Chinese labels
+- no blue boxes
+- no text anywhere
+- no UI overlays
+- no people, characters, or logos

@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "serve": "node scripts/life-roadmap-server.mjs",
+    "start": "node scripts/life-roadmap-server.mjs",
     "serve:static": "python3 -m http.server 4173"
   },
   "dependencies": {

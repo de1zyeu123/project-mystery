@@ -1,0 +1,46 @@
+{
+  "sourceImage": "base_map_style_candidate_01_microfix_v3.png",
+  "imageSize": {
+    "width": 1254,
+    "height": 1254
+  },
+  "coordinateSystem": "pixel, origin at top-left, x right, y down",
+  "notes": [
+    "识别对象为正式圆形/椭圆图台节点，不包含临时标注。",
+    "eventSymbolAnchor 建议使用节点中心点，CSS 可用 transform: translate(-50%, -50%)。",
+    "当前坐标为图像检测加人工复核结果，建议允许 6-10px 视觉容差。"
+  ],
+  "nodes": [
+    { "id": 0, "label": "start_plaza", "x": 153, "y": 1046, "xPct": 12.20, "yPct": 83.41 },
+    { "id": 1, "label": "left_lower_plaza", "x": 263, "y": 742, "xPct": 20.97, "yPct": 59.17 },
+    { "id": 2, "label": "lower_center_left_plaza", "x": 575, "y": 900, "xPct": 45.85, "yPct": 71.77 },
+    { "id": 3, "label": "mid_left_plaza", "x": 208, "y": 588, "xPct": 16.59, "yPct": 46.89 },
+    { "id": 4, "label": "center_plaza", "x": 617, "y": 584, "xPct": 49.20, "yPct": 46.57 },
+    { "id": 5, "label": "bottom_center_plaza", "x": 716, "y": 1078, "xPct": 57.10, "yPct": 85.96 },
+    { "id": 6, "label": "upper_left_plaza", "x": 261, "y": 394, "xPct": 20.81, "yPct": 31.42 },
+    { "id": 7, "label": "upper_center_plaza", "x": 648, "y": 315, "xPct": 51.67, "yPct": 25.12 },
+    { "id": 8, "label": "right_center_plaza", "x": 1004, "y": 454, "xPct": 80.06, "yPct": 36.20 },
+    { "id": 9, "label": "lower_right_center_plaza", "x": 992, "y": 957, "xPct": 79.11, "yPct": 76.32 },
+    { "id": 10, "label": "mountain_terminal", "x": 329, "y": 211, "xPct": 26.24, "yPct": 16.83 },
+    { "id": 11, "label": "lighthouse_terminal", "x": 1054, "y": 199, "xPct": 84.05, "yPct": 15.87 },
+    { "id": 12, "label": "far_lower_right_terminal", "x": 1197, "y": 1078, "xPct": 95.45, "yPct": 85.96 }
+  ],
+  "routes": [
+    { "from": 0, "to": 1, "visual": "stone path with short bridge segment" },
+    { "from": 0, "to": 2, "visual": "curved stone path" },
+    { "from": 1, "to": 3, "visual": "stone path" },
+    { "from": 1, "to": 4, "visual": "wooden suspension bridge" },
+    { "from": 3, "to": 6, "visual": "stone path" },
+    { "from": 6, "to": 10, "visual": "mountain stone path" },
+    { "from": 3, "to": 7, "visual": "wooden suspension bridge" },
+    { "from": 7, "to": 11, "visual": "upper stone path" },
+    { "from": 4, "to": 7, "visual": "vertical stone path" },
+    { "from": 4, "to": 8, "visual": "curved stone path" },
+    { "from": 8, "to": 11, "visual": "stair route" },
+    { "from": 2, "to": 4, "visual": "vertical stone path" },
+    { "from": 2, "to": 5, "visual": "stone path" },
+    { "from": 5, "to": 8, "visual": "long upward stair/path route" },
+    { "from": 5, "to": 9, "visual": "lower stone path" },
+    { "from": 9, "to": 12, "visual": "single terminal path" }
+  ]
+}

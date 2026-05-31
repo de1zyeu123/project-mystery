@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 966" width="982" height="966" role="img" aria-label="Project Mystery user route topology blueprint">
+  <defs>
+    <style>
+      .bg { fill: #f7edcf; }
+      .grid { stroke: rgba(88, 60, 35, 0.08); stroke-width: 1; }
+      .route { fill: none; stroke: #fff200; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .route-critical { fill: none; stroke: #fff200; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+      .node { fill: #fff200; stroke: #000; stroke-width: 4; }
+      .node-text { font-family: Arial, "PingFang SC", sans-serif; font-size: 20px; font-weight: 800; fill: #000; text-anchor: middle; dominant-baseline: central; }
+      .feature-box { fill: #176e8e; stroke: #0d4a60; stroke-width: 3; }
+      .feature-text { font-family: Arial, "PingFang SC", sans-serif; font-size: 34px; font-weight: 900; fill: #fff; text-anchor: middle; dominant-baseline: central; }
+      .small-note { font-family: Arial, "PingFang SC", sans-serif; font-size: 14px; fill: rgba(68, 45, 24, 0.72); }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="982" height="966" rx="0" />
+
+  <g opacity="0.55">
+    <path class="grid" d="M0 120H982M0 240H982M0 360H982M0 480H982M0 600H982M0 720H982M0 840H982" />
+    <path class="grid" d="M120 0V966M240 0V966M360 0V966M480 0V966M600 0V966M720 0V966M840 0V966" />
+  </g>
+
+  <g id="routes">
+    <path class="route" d="M136 762 C147 692 166 635 180 574" />
+    <path class="route" d="M136 762 C230 718 330 682 414 665" />
+    <path class="route" d="M180 574 C163 530 150 480 136 437" />
+    <path class="route" d="M180 574 C270 560 370 548 448 542" />
+    <path class="route" d="M136 437 C145 390 154 344 166 309" />
+    <path class="route" d="M166 309 C180 250 198 190 212 133" />
+    <path class="route" d="M136 437 C238 410 350 384 447 360" />
+    <path class="route" d="M447 360 C570 304 680 243 778 190" />
+    <path class="route" d="M448 542 C448 485 448 421 447 360" />
+    <path class="route" d="M448 542 C500 505 553 472 609 444" />
+    <path class="route" d="M609 444 C670 350 728 250 778 190" />
+    <path class="route" d="M414 665 C430 620 440 578 448 542" />
+    <path class="route" d="M414 665 C450 724 490 786 545 831" />
+    <path class="route-critical" d="M545 831 C565 680 590 550 609 444" />
+    <path class="route" d="M545 831 C610 792 680 758 744 728" />
+    <path class="route" d="M744 728 C790 720 840 716 879 718" />
+  </g>
+
+  <g id="feature-labels">
+    <g transform="translate(109 622)">
+      <rect class="feature-box" x="-27" y="-29" width="54" height="58" rx="2" />
+      <text class="feature-text">桥</text>
+    </g>
+    <g transform="translate(100 476)">
+      <rect class="feature-box" x="-27" y="-29" width="54" height="58" rx="2" />
+      <text class="feature-text">桥</text>
+    </g>
+    <g transform="translate(294 558)">
+      <rect class="feature-box" x="-27" y="-29" width="54" height="58" rx="2" />
+      <text class="feature-text">桥</text>
+    </g>
+    <g transform="translate(227 396)">
+      <rect class="feature-box" x="-27" y="-29" width="54" height="58" rx="2" />
+      <text class="feature-text">桥</text>
+    </g>
+    <g transform="translate(792 260)">
+      <rect class="feature-box" x="-56" y="-29" width="112" height="58" rx="2" />
+      <text class="feature-text">梯子</text>
+    </g>
+    <g transform="translate(719 806)">
+      <rect class="feature-box" x="-56" y="-29" width="112" height="58" rx="2" />
+      <text class="feature-text">梯子</text>
+    </g>
+  </g>
+
+  <g id="nodes">
+    <g transform="translate(136 762)"><circle class="node" r="42" /><text class="node-text">0</text></g>
+    <g transform="translate(180 574)"><circle class="node" r="42" /><text class="node-text">1</text></g>
+    <g transform="translate(414 665)"><circle class="node" r="42" /><text class="node-text">2</text></g>
+    <g transform="translate(136 437)"><circle class="node" r="42" /><text class="node-text">3</text></g>
+    <g transform="translate(448 542)"><circle class="node" r="42" /><text class="node-text">4</text></g>
+    <g transform="translate(545 831)"><circle class="node" r="42" /><text class="node-text">5</text></g>
+    <g transform="translate(166 309)"><circle class="node" r="42" /><text class="node-text">6</text></g>
+    <g transform="translate(447 360)"><circle class="node" r="42" /><text class="node-text">7</text></g>
+    <g transform="translate(609 444)"><circle class="node" r="42" /><text class="node-text">8</text></g>
+    <g transform="translate(744 728)"><circle class="node" r="42" /><text class="node-text">9</text></g>
+    <g transform="translate(212 133)"><circle class="node" r="42" /><text class="node-text">10</text></g>
+    <g transform="translate(778 190)"><circle class="node" r="42" /><text class="node-text">11</text></g>
+    <g transform="translate(879 718)"><circle class="node" r="42" /><text class="node-text">10</text></g>
+  </g>
+
+  <text class="small-note" x="24" y="944">Topology blueprint copied from user route sketch. Use this as the routing source before drawing terrain.</text>
+</svg>

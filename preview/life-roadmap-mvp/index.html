@@ -3,21 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>人生路况 MVP</title>
+    <title>人生路况</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./vendor/maplibre-gl.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="phone-shell" aria-label="人生路况 MVP 本地测试">
+    <main class="phone-shell" aria-label="人生路况">
       <section id="inputScreen" class="app-screen input-screen">
         <header class="hero">
-          <p>本地 MVP · 规则引擎验证</p>
+          <p>先填基本信息</p>
           <h1>人生路况</h1>
-          <span>输入少量信息，生成今日导航。</span>
+          <span>填入出生信息，为你解读人生未来的路况</span>
         </header>
 
         <form id="lifeForm" class="form-panel">
+          <section class="avatar-picker auto-avatar" aria-label="系统匹配棋子形象">
+            <img id="avatarPreview" class="avatar-sample" src="../../assets/generated/life-road-atlas-v2/avatars/female_young.png" alt="" />
+            <div class="avatar-picker-header">
+              <strong id="avatarLabel">你在地图中的形象</strong>
+            </div>
+          </section>
+
+          <label>
+            <span>性别</span>
+            <select id="gender" required>
+              <option value="female" selected>女</option>
+              <option value="male">男</option>
+            </select>
+          </label>
+
           <label>
             <span>出生日期</span>
             <input id="birthDate" type="date" required value="1996-04-18" />
@@ -33,42 +47,16 @@
             <input id="birthplace" type="text" value="杭州" placeholder="例如：杭州" />
           </label>
 
-          <label>
-            <span>性别</span>
-            <select id="gender">
-              <option value="unknown">暂不填写</option>
-              <option value="female" selected>女</option>
-              <option value="male">男</option>
-              <option value="other">其他</option>
-            </select>
-          </label>
-
-          <label class="full">
-            <span>今天想问哪件事</span>
-            <textarea id="question" rows="2">今天适合推进工作吗？</textarea>
-          </label>
-
-          <div class="quick-questions" aria-label="快捷问题">
-            <button type="button">今天适合干什么？</button>
-            <button type="button">今天要不要变道？</button>
-            <button type="button">今天适合联系 TA 吗？</button>
-            <button type="button">今天能不能谈钱？</button>
-          </div>
-
-          <button class="primary-button" type="submit">生成今日导航</button>
+          <button class="primary-button" type="submit">分析我未来的路</button>
         </form>
-
-        <footer class="mvp-note">
-          使用 `lunar-javascript` 计算干支、节气、宜忌。当前为 v1 产品验证版。
-        </footer>
       </section>
 
       <section id="resultScreen" class="app-screen result-screen hidden">
         <header class="topbar">
           <div class="title-stack">
-            <p class="overline" id="resultOverline">今日 · 互动导航图</p>
-            <h1 id="resultHeadline">今日路况</h1>
-            <span id="resultSubline">先看结论，再选路线。</span>
+            <p class="overline" id="resultOverline">当下路况</p>
+            <h1 id="resultHeadline">人生路况</h1>
+            <span id="resultSubline">看你现在落在哪段地势。</span>
           </div>
           <div class="top-actions">
             <button id="backButton" class="icon-button" type="button" aria-label="返回输入">
@@ -76,7 +64,7 @@
                 <path d="m15 18-6-6 6-6" />
               </svg>
             </button>
-            <button id="traceButton" class="icon-button" type="button" aria-label="查看生成逻辑">
+            <button id="traceButton" class="icon-button" type="button" aria-label="查看分析依据">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 20h9" />
                 <path d="M12 4h9" />
@@ -91,7 +79,7 @@
 
         <section class="map-region">
           <div class="map-verdict" aria-live="polite">
-            <strong id="verdictPill">今日答案</strong>
+            <strong id="verdictPill">前路建议</strong>
             <span id="verdictAction">保持车道</span>
             <span id="verdictRisk">风险可控</span>
           </div>
@@ -103,29 +91,33 @@
           <div class="sheet-handle" aria-hidden="true"></div>
           <div class="sheet-header">
             <div>
-              <p class="sheet-label">今日答案</p>
-              <strong id="selectedSummary">A 稳妥路 · 推荐</strong>
+              <p id="sheetLabel" class="sheet-label">前路判断</p>
+              <strong id="selectedSummary">前路待分析</strong>
+              <span id="choiceLockHint" class="choice-lock-hint">选择不可回退，请按当下判断继续走。</span>
             </div>
-            <span id="confidenceBadge" class="confidence">标准精度</span>
           </div>
 
           <div id="decisionBoard" class="decision-board" aria-label="今日行动建议"></div>
-          <div id="routeCards" class="route-cards" role="tablist" aria-label="路线 A B C"></div>
+          <div id="routeCards" class="route-cards" aria-label="路线选择"></div>
+          <button id="detailPeekButton" class="detail-peek-button" type="button" aria-expanded="false">详细解读</button>
           <div id="scoreStrip" class="score-strip"></div>
           <div id="mapDetail" class="map-detail" aria-live="polite"></div>
+          <div id="terminalReportCta" class="terminal-report-cta">
+            <button id="openReportButton" type="button">预览未来报告</button>
+            <button id="downloadReportButton" type="button">下载报告</button>
+          </div>
 
           <div class="instruction-bar">
             <div>
-              <p id="instructionTitle">导航指令</p>
+              <p id="instructionTitle">下一步建议</p>
               <span id="instructionBody">保持车道。</span>
             </div>
-            <button id="shareButton" type="button">生成分享卡</button>
           </div>
         </section>
-        <div id="shareToast" class="share-toast hidden">今日答案已准备</div>
+        <div id="shareToast" class="share-toast hidden">签文已备好</div>
       </section>
 
-      <section id="tracePanel" class="trace-panel hidden" aria-label="生成逻辑">
+      <section id="tracePanel" class="trace-panel hidden" aria-label="分析依据">
         <div class="trace-card">
           <header>
             <strong>为什么是这个结果</strong>
@@ -134,9 +126,26 @@
           <div id="traceOutput" class="evidence-list"></div>
         </div>
       </section>
+
+      <section id="futureReportPanel" class="future-report-panel hidden" aria-label="未来报告" role="dialog" aria-modal="true">
+        <div class="future-report-card">
+          <header>
+            <div>
+              <span id="futureReportStatus">生成中</span>
+              <strong id="futureReportTitle">你的未来报告</strong>
+            </div>
+            <button id="closeReportButton" type="button">关闭</button>
+          </header>
+          <div id="futureReportBody" class="future-report-body">正在生成未来 20 年报告。</div>
+          <footer>
+            <button id="copyReportButton" type="button">复制</button>
+            <button id="previewReportButton" type="button">预览</button>
+            <button id="downloadReportModalButton" type="button">下载</button>
+          </footer>
+        </div>
+      </section>
     </main>
 
-    <script src="./vendor/maplibre-gl.js"></script>
     <script src="./vendor/lunar.js"></script>
     <script src="./app.js"></script>
   </body>

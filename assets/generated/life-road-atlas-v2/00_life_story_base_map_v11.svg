@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 982 966" width="982" height="966" role="img" aria-label="Project Mystery clean life road base map">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#66c8f2"/>
+      <stop offset="1" stop-color="#1688c3"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a8cf48"/>
+      <stop offset="1" stop-color="#78ad35"/>
+    </linearGradient>
+    <linearGradient id="cliff" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c48b4b"/>
+      <stop offset="1" stop-color="#8c5b2d"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe3ae"/>
+      <stop offset="1" stop-color="#e2b975"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#6d4b26" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .bg { fill: #f7edcf; }
+      .water { fill: url(#water); }
+      .water-line { fill: none; stroke: rgba(255,255,255,0.38); stroke-width: 2; stroke-linecap: round; }
+      .cliff { fill: url(#cliff); stroke: #73461f; stroke-width: 3; }
+      .land { fill: url(#grass); stroke: #5b7f25; stroke-width: 3; filter: url(#softShadow); }
+      .road-shadow { fill: none; stroke: #9d6b35; stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; }
+      .road { fill: none; stroke: url(#stone); stroke-width: 24; stroke-linecap: round; stroke-linejoin: round; }
+      .road-inner { fill: none; stroke: rgba(255,255,255,0.34); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 18; }
+      .bridge-shadow { fill: none; stroke: #6c431f; stroke-width: 38; stroke-linecap: round; stroke-linejoin: round; }
+      .bridge { fill: none; stroke: #b77936; stroke-width: 28; stroke-linecap: round; stroke-linejoin: round; }
+      .bridge-rail { fill: none; stroke: #5b3518; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 9 14; opacity: 0.9; }
+      .stairs-shadow { fill: none; stroke: #8a5a2b; stroke-width: 30; stroke-linecap: round; stroke-linejoin: round; opacity: 0.65; }
+      .stairs { fill: none; stroke: #e8bf79; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 12 9; }
+      .pad-shadow { fill: #a87435; opacity: 0.55; }
+      .pad { fill: url(#stone); stroke: #9b6a32; stroke-width: 3; }
+      .pad-ring { fill: none; stroke: rgba(142,92,39,0.38); stroke-width: 3; }
+      .tree-trunk { fill: #8b5a2b; }
+      .tree { fill: #27865a; stroke: #1f6647; stroke-width: 2; }
+      .tree2 { fill: #78a928; stroke: #577c1d; stroke-width: 2; }
+      .rock { fill: #b8b09a; stroke: #827a68; stroke-width: 2; }
+      .flower-p { fill: #ed7e9a; }
+      .flower-y { fill: #f2c94c; }
+      .flower-w { fill: #f8f1d8; }
+      .terminal-lighthouse { fill: #f6e5c4; stroke: #9b6a32; stroke-width: 3; }
+      .lighthouse-red { fill: #d85635; }
+      .star { fill: #ffd54d; stroke: #a77420; stroke-width: 3; }
+      .mountain { fill: #6c8790; stroke: #3f5962; stroke-width: 3; }
+      .snow { fill: #f4f2e8; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="982" height="966"/>
+  <path class="water" d="M40 198C96 143 171 119 254 130C340 142 384 188 398 247C451 211 532 204 590 231C639 254 665 299 658 347C718 306 813 309 884 361C957 414 955 508 914 568C956 642 936 746 856 794C792 832 729 825 683 794C640 873 544 905 466 866C415 841 384 792 373 739C317 794 232 813 163 780C75 738 45 642 84 565C38 517 8 436 33 356C46 315 70 285 100 264C59 247 41 226 40 198Z"/>
+  <path class="water-line" d="M73 251C149 225 224 229 288 264"/>
+  <path class="water-line" d="M498 262C555 246 604 258 638 300"/>
+  <path class="water-line" d="M699 664C754 630 824 636 865 679"/>
+  <path class="water-line" d="M157 717C230 741 303 727 353 680"/>
+
+  <g id="terrain">
+    <path class="cliff" transform="translate(0 22)" d="M79 223C72 151 137 78 226 82C315 86 357 141 340 209C390 240 372 317 314 339C321 397 279 449 216 460C230 517 207 591 142 618C78 644 26 602 39 537C13 494 33 432 84 403C54 342 48 280 79 223Z"/>
+    <path class="land" d="M79 223C72 151 137 78 226 82C315 86 357 141 340 209C390 240 372 317 314 339C321 397 279 449 216 460C230 517 207 591 142 618C78 644 26 602 39 537C13 494 33 432 84 403C54 342 48 280 79 223Z"/>
+
+    <path class="cliff" transform="translate(0 22)" d="M72 720C32 650 58 586 126 564C198 542 261 575 277 640C335 652 365 717 335 772C304 831 221 855 146 826C96 807 63 767 72 720Z"/>
+    <path class="land" d="M72 720C32 650 58 586 126 564C198 542 261 575 277 640C335 652 365 717 335 772C304 831 221 855 146 826C96 807 63 767 72 720Z"/>
+
+    <path class="cliff" transform="translate(0 22)" d="M330 318C390 241 499 207 593 244C677 277 711 373 666 450C722 525 684 633 592 669C506 702 409 666 381 581C310 553 288 381 330 318Z"/>
+    <path class="land" d="M330 318C390 241 499 207 593 244C677 277 711 373 666 450C722 525 684 633 592 669C506 702 409 666 381 581C310 553 288 381 330 318Z"/>
+
+    <path class="cliff" transform="translate(0 22)" d="M413 742C397 675 443 622 512 615C584 608 646 653 657 724C671 802 617 863 537 864C468 865 424 812 413 742Z"/>
+    <path class="land" d="M413 742C397 675 443 622 512 615C584 608 646 653 657 724C671 802 617 863 537 864C468 865 424 812 413 742Z"/>
+
+    <path class="cliff" transform="translate(0 22)" d="M623 362C644 294 706 240 782 236C878 232 942 292 946 383C950 469 892 533 806 537C722 541 620 480 623 362Z"/>
+    <path class="land" d="M623 362C644 294 706 240 782 236C878 232 942 292 946 383C950 469 892 533 806 537C722 541 620 480 623 362Z"/>
+
+    <path class="cliff" transform="translate(0 22)" d="M644 686C662 609 735 562 815 577C909 595 946 679 908 759C872 833 772 852 702 809C659 782 633 736 644 686Z"/>
+    <path class="land" d="M644 686C662 609 735 562 815 577C909 595 946 679 908 759C872 833 772 852 702 809C659 782 633 736 644 686Z"/>
+  </g>
+
+  <g id="decor">
+    <path class="mountain" d="M125 184L172 72L222 184Z"/><path class="snow" d="M172 72L154 116L171 104L190 121Z"/>
+    <path class="mountain" d="M190 178L247 44L310 178Z"/><path class="snow" d="M247 44L224 100L246 88L270 108Z"/>
+    <path class="mountain" d="M270 190L313 82L364 190Z"/><path class="snow" d="M313 82L297 124L313 113L332 132Z"/>
+    <g transform="translate(785 112)">
+      <rect class="terminal-lighthouse" x="-24" y="28" width="48" height="78" rx="10"/>
+      <rect class="lighthouse-red" x="-20" y="54" width="40" height="18"/>
+      <ellipse class="terminal-lighthouse" cx="0" cy="28" rx="28" ry="13"/>
+      <path class="star" d="M0 -28L9 -8L31 -6L14 8L19 30L0 18L-19 30L-14 8L-31 -6L-9 -8Z"/>
+    </g>
+    <g transform="translate(101 536)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree" cy="4" r="22"/></g>
+    <g transform="translate(72 444)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree" cy="4" r="22"/></g>
+    <g transform="translate(170 247)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree" cy="4" r="22"/></g>
+    <g transform="translate(307 202)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree2" cy="4" r="21"/></g>
+    <g transform="translate(534 247)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree2" cy="4" r="21"/></g>
+    <g transform="translate(679 306)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree" cy="4" r="20"/></g>
+    <g transform="translate(860 420)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree" cy="4" r="23"/></g>
+    <g transform="translate(810 650)"><rect class="tree-trunk" x="-5" y="15" width="10" height="18"/><circle class="tree2" cy="4" r="20"/></g>
+    <ellipse class="rock" cx="604" cy="289" rx="18" ry="14"/><ellipse class="rock" cx="490" cy="747" rx="16" ry="13"/><ellipse class="rock" cx="875" cy="612" rx="18" ry="14"/>
+    <circle class="flower-p" cx="273" cy="504" r="6"/><circle class="flower-y" cx="571" cy="424" r="6"/><circle class="flower-w" cx="715" cy="412" r="6"/><circle class="flower-p" cx="824" cy="291" r="6"/><circle class="flower-y" cx="240" cy="754" r="6"/>
+  </g>
+
+  <g id="routes">
+    <!-- Bridges: only 0->1, 1->3, 1->4, 3->7 -->
+    <path class="bridge-shadow" d="M136 762C147 692 166 635 180 574"/>
+    <path class="bridge" d="M136 762C147 692 166 635 180 574"/>
+    <path class="bridge-rail" d="M136 762C147 692 166 635 180 574"/>
+
+    <path class="road-shadow" d="M136 762C230 730 315 695 414 665"/>
+    <path class="road" d="M136 762C230 730 315 695 414 665"/>
+    <path class="road-inner" d="M136 762C230 730 315 695 414 665"/>
+
+    <path class="bridge-shadow" d="M180 574C163 530 150 480 136 437"/>
+    <path class="bridge" d="M180 574C163 530 150 480 136 437"/>
+    <path class="bridge-rail" d="M180 574C163 530 150 480 136 437"/>
+
+    <path class="bridge-shadow" d="M180 574C270 560 360 548 448 542"/>
+    <path class="bridge" d="M180 574C270 560 360 548 448 542"/>
+    <path class="bridge-rail" d="M180 574C270 560 360 548 448 542"/>
+
+    <path class="stairs-shadow" d="M136 437C145 390 154 345 166 309"/>
+    <path class="stairs" d="M136 437C145 390 154 345 166 309"/>
+
+    <path class="road-shadow" d="M166 309C180 250 198 190 212 133"/>
+    <path class="road" d="M166 309C180 250 198 190 212 133"/>
+    <path class="road-inner" d="M166 309C180 250 198 190 212 133"/>
+
+    <path class="bridge-shadow" d="M136 437C238 410 350 384 447 360"/>
+    <path class="bridge" d="M136 437C238 410 350 384 447 360"/>
+    <path class="bridge-rail" d="M136 437C238 410 350 384 447 360"/>
+
+    <path class="road-shadow" d="M447 360C570 304 680 243 778 190"/>
+    <path class="road" d="M447 360C570 304 680 243 778 190"/>
+    <path class="road-inner" d="M447 360C570 304 680 243 778 190"/>
+
+    <path class="road-shadow" d="M448 542C448 485 448 421 447 360"/>
+    <path class="road" d="M448 542C448 485 448 421 447 360"/>
+    <path class="road-inner" d="M448 542C448 485 448 421 447 360"/>
+
+    <path class="road-shadow" d="M448 542C500 505 553 472 609 444"/>
+    <path class="road" d="M448 542C500 505 553 472 609 444"/>
+    <path class="road-inner" d="M448 542C500 505 553 472 609 444"/>
+
+    <path class="stairs-shadow" d="M609 444C670 350 728 250 778 190"/>
+    <path class="stairs" d="M609 444C670 350 728 250 778 190"/>
+
+    <path class="road-shadow" d="M414 665C430 620 440 578 448 542"/>
+    <path class="road" d="M414 665C430 620 440 578 448 542"/>
+    <path class="road-inner" d="M414 665C430 620 440 578 448 542"/>
+
+    <path class="road-shadow" d="M414 665C450 724 490 786 545 831"/>
+    <path class="road" d="M414 665C450 724 490 786 545 831"/>
+    <path class="road-inner" d="M414 665C450 724 490 786 545 831"/>
+
+    <path class="road-shadow" d="M545 831C565 680 590 550 609 444"/>
+    <path class="road" d="M545 831C565 680 590 550 609 444"/>
+    <path class="road-inner" d="M545 831C565 680 590 550 609 444"/>
+
+    <path class="stairs-shadow" d="M545 831C610 792 680 758 744 728"/>
+    <path class="stairs" d="M545 831C610 792 680 758 744 728"/>
+
+    <path class="road-shadow" d="M744 728C790 720 840 716 879 718"/>
+    <path class="road" d="M744 728C790 720 840 716 879 718"/>
+    <path class="road-inner" d="M744 728C790 720 840 716 879 718"/>
+  </g>
+
+  <g id="pads">
+    <g transform="translate(136 762)"><ellipse class="pad-shadow" cy="8" rx="61" ry="34"/><ellipse class="pad" rx="58" ry="31"/><ellipse class="pad-ring" rx="43" ry="22"/></g>
+    <g transform="translate(180 574)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(414 665)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(136 437)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(448 542)"><ellipse class="pad-shadow" cy="7" rx="48" ry="28"/><ellipse class="pad" rx="45" ry="25"/><ellipse class="pad-ring" rx="31" ry="16"/></g>
+    <g transform="translate(545 831)"><ellipse class="pad-shadow" cy="7" rx="48" ry="28"/><ellipse class="pad" rx="45" ry="25"/><ellipse class="pad-ring" rx="31" ry="16"/></g>
+    <g transform="translate(166 309)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(447 360)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(609 444)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(744 728)"><ellipse class="pad-shadow" cy="7" rx="45" ry="26"/><ellipse class="pad" rx="42" ry="23"/><ellipse class="pad-ring" rx="29" ry="15"/></g>
+    <g transform="translate(212 133)"><ellipse class="pad-shadow" cy="7" rx="48" ry="28"/><ellipse class="pad" rx="45" ry="25"/><ellipse class="pad-ring" rx="31" ry="16"/></g>
+    <g transform="translate(778 190)"><ellipse class="pad-shadow" cy="7" rx="48" ry="28"/><ellipse class="pad" rx="45" ry="25"/><ellipse class="pad-ring" rx="31" ry="16"/></g>
+    <g transform="translate(879 718)"><ellipse class="pad-shadow" cy="7" rx="48" ry="28"/><ellipse class="pad" rx="45" ry="25"/><ellipse class="pad-ring" rx="31" ry="16"/></g>
+  </g>
+</svg>

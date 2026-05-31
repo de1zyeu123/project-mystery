@@ -1,0 +1,10 @@
+Use case: stylized-concept
+Asset type: mobile app base map for a life-road board-game UI
+Primary request: Create a new isometric 2.5D miniature life-road topology map. It should feel like a vintage Monopoly / flying-chess board-game landscape with a little Mario 3D-style clarity, but it must read as a one-way life journey rather than a closed board loop.
+Scene/backdrop: flat cream background #F5EBD7, square composition, centered large map occupying about 88% of the image.
+Subject: a raised clay/plastic toy island map. The road starts at the lower-left with a clear start plaza, then grows toward the upper-right like a branching tree. At the first fork there are exactly two main routes. Each route splits again into two options, then some paths merge, and the upper-right has four small endpoint platforms/exits. Roads only move forward from lower-left to upper-right, never loop back.
+Map structure: L0 start lower-left; L1 two route branches; L2 second decision layer in the center; L3 third decision layer in the upper-middle; O1-O4 four endpoint platforms on the upper-right side. Leave clean circular empty node pads along the road for future icons, but do not put icons on the map.
+Style/medium: soft candy-color isometric clay/plastic miniature board-game map, rounded corners, chunky shapes, tactile toy material, deep brown outline strokes.
+Composition/framing: mobile-first square base map, top-left soft lighting, gentle terrain height, clear route hierarchy. The road should be pale cream stone tiles with rounded edges. Use low hills, bridges, small tunnels, water strips, grass islands and gentle cliffs only as supporting terrain. Keep the road and node pads dominant.
+Color palette: cream white, mint green, sky blue, mustard yellow, cherry red accents, cocoa brown outlines. Avoid a one-hue palette.
+Constraints: no text, no numbers, no labels, no people, no brand logos, no UI overlay, no baked-in icon symbols, no closed circular Monopoly loop, no random scatter. The map must have obvious branching and merging paths, and enough open space at each node pad for overlay icons.

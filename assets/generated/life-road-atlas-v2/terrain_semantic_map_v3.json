@@ -1,0 +1,121 @@
+{
+  "id": "terrain_semantic_map_v4_story_ai_integrated",
+  "source_image": "00_life_story_base_map_v4_ai_raw.png",
+  "app_image": "00_life_story_base_map_v4.png",
+  "debug_image": "00_life_story_topology_debug_v4.png",
+  "coordinate_system": "normalized_percent",
+  "terrain_features_are_base_map_assets": true,
+  "topology_rendered_on_user_map": false,
+  "direct_features": [
+    {
+      "id": "shortcut_forest_bridge",
+      "kind": "bridge",
+      "route_hint": "0->1",
+      "meaning": "跨水入林的捷径桥",
+      "already_in_base_map": true
+    },
+    {
+      "id": "forest_to_plain_bridge",
+      "kind": "bridge",
+      "route_hint": "1->4",
+      "meaning": "把森林机会接回平原主路",
+      "already_in_base_map": true
+    },
+    {
+      "id": "forest_exit_small_bridge",
+      "kind": "bridge",
+      "route_hint": "3->7",
+      "meaning": "冒险后回到平原的小桥",
+      "already_in_base_map": true
+    },
+    {
+      "id": "hill_steps",
+      "kind": "steps",
+      "route_hint": "3->6",
+      "meaning": "森林后的上坡台阶",
+      "already_in_base_map": true
+    },
+    {
+      "id": "highland_ladder",
+      "kind": "ladder",
+      "route_hint": "8->11",
+      "meaning": "上灯塔高地的梯子",
+      "already_in_base_map": true
+    },
+    {
+      "id": "cliffside_ladder",
+      "kind": "ladder",
+      "route_hint": "5->9",
+      "meaning": "崖边捷径的梯子",
+      "already_in_base_map": true
+    }
+  ],
+  "land_safe_anchors": {
+    "0": {
+      "x": 14,
+      "y": 80,
+      "water_ratio": 0.0
+    },
+    "1": {
+      "x": 18,
+      "y": 53,
+      "water_ratio": 0.0
+    },
+    "2": {
+      "x": 34,
+      "y": 80,
+      "water_ratio": 0.0
+    },
+    "3": {
+      "x": 26,
+      "y": 41,
+      "water_ratio": 0.0
+    },
+    "4": {
+      "x": 47,
+      "y": 52,
+      "water_ratio": 0.0
+    },
+    "5": {
+      "x": 47,
+      "y": 85,
+      "water_ratio": 0.0
+    },
+    "6": {
+      "x": 24,
+      "y": 30,
+      "water_ratio": 0.0
+    },
+    "7": {
+      "x": 62,
+      "y": 42,
+      "water_ratio": 0.0
+    },
+    "8": {
+      "x": 75,
+      "y": 31,
+      "water_ratio": 0.0
+    },
+    "9": {
+      "x": 75,
+      "y": 77,
+      "water_ratio": 0.0
+    },
+    "10A": {
+      "x": 27,
+      "y": 18,
+      "water_ratio": 0.0
+    },
+    "10B": {
+      "x": 89,
+      "y": 73,
+      "water_ratio": 0.0
+    },
+    "11": {
+      "x": 82,
+      "y": 18,
+      "water_ratio": 0.0
+    }
+  },
+  "feature_policy": "bridges, ladders, stairs, roads, pads are integrated into the AI-rendered base map; no code overlay is used on the user map"
+}

@@ -1,0 +1,267 @@
+{
+  "id": "life_road_story_topology_v5_ai_integrated",
+  "map": {
+    "filename": "00_life_story_base_map_v12.svg",
+    "raw_filename": null,
+    "debug_filename": null,
+    "render_script": "scripts/render_life_story_map_v12.mjs",
+    "terrain_semantic_map": "terrain_semantic_map_v3.json",
+    "route_story_config": "route_story_config_v5.json",
+    "coordinate_system": "normalized_percent",
+    "meaning_source": "fixed_v5_route_meaning_and_possibilities",
+    "style_source": "deterministic topology-locked SVG render with board-game terrain styling"
+  },
+  "rules": {
+    "topology_is_fixed_display_skeleton": true,
+    "topology_rendered_on_user_map": true,
+    "terrain_features_are_base_map_assets": true,
+    "nodes_must_snap_to_road_anchors": true,
+    "nodes_must_be_landlocked": true,
+    "node_meaning_source": "computed_from_bazi_calendar_scores_and_user_path",
+    "llm_can_rewrite_copy_only": true,
+    "initial_visible_nodes": [
+      "1",
+      "2"
+    ],
+    "max_choices_per_step": 2,
+    "terminal_nodes": [
+      "10",
+      "11",
+      "12"
+    ],
+    "terminal_label_resolution": "user corrected upper-left terminal to 10 and lower-right terminal to 12"
+  },
+  "road_anchors": {
+    "0": {
+      "x": 13.8,
+      "y": 78.9,
+      "role": "current_position",
+      "water_ratio": 0.0
+    },
+    "1": {
+      "x": 18.3,
+      "y": 59.4,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "2": {
+      "x": 42.2,
+      "y": 68.8,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "3": {
+      "x": 13.8,
+      "y": 45.2,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "4": {
+      "x": 45.6,
+      "y": 56.1,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "5": {
+      "x": 55.5,
+      "y": 86.0,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "6": {
+      "x": 16.9,
+      "y": 32.0,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "7": {
+      "x": 45.5,
+      "y": 37.3,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "8": {
+      "x": 62.0,
+      "y": 46.0,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "9": {
+      "x": 75.8,
+      "y": 75.4,
+      "role": "choice",
+      "water_ratio": 0.0
+    },
+    "10": {
+      "x": 21.6,
+      "y": 13.8,
+      "role": "outcome",
+      "water_ratio": 0.0
+    },
+    "12": {
+      "x": 89.5,
+      "y": 74.3,
+      "role": "outcome",
+      "water_ratio": 0.0
+    },
+    "11": {
+      "x": 79.2,
+      "y": 19.7,
+      "role": "outcome",
+      "water_ratio": 0.0
+    }
+  },
+  "transitions": {
+    "0": [
+      "1",
+      "2"
+    ],
+    "1": [
+      "3",
+      "4"
+    ],
+    "2": [
+      "4",
+      "5"
+    ],
+    "3": [
+      "6",
+      "7"
+    ],
+    "4": [
+      "7",
+      "8"
+    ],
+    "5": [
+      "8",
+      "9"
+    ],
+    "6": [
+      "10"
+    ],
+    "7": [
+      "11"
+    ],
+    "8": [
+      "11"
+    ],
+    "9": [
+      "12"
+    ],
+    "10": [],
+    "11": []
+    ,
+    "12": []
+  },
+  "debug_paths": {
+    "0->1": {
+      "d": "M13.8 78.9 C14.9 71.4 16.7 65.4 18.3 59.4"
+    },
+    "0->2": {
+      "d": "M13.8 78.9 C23.1 75.7 33.0 71.6 42.2 68.8"
+    },
+    "1->3": {
+      "d": "M18.3 59.4 C16.5 54.7 15.3 49.7 13.8 45.2"
+    },
+    "1->4": {
+      "d": "M18.3 59.4 C27.1 58.0 36.7 56.8 45.6 56.1"
+    },
+    "2->4": {
+      "d": "M42.2 68.8 C43.8 64.2 44.9 59.9 45.6 56.1"
+    },
+    "2->5": {
+      "d": "M42.2 68.8 C45.9 74.9 49.8 81.3 55.5 86.0"
+    },
+    "3->6": {
+      "d": "M13.8 45.2 C14.8 40.4 15.8 35.8 16.9 32.0"
+    },
+    "3->7": {
+      "d": "M13.8 45.2 C24.0 42.5 35.7 39.8 45.5 37.3"
+    },
+    "4->7": {
+      "d": "M45.6 56.1 C45.6 50.1 45.6 43.5 45.5 37.3"
+    },
+    "4->8": {
+      "d": "M45.6 56.1 C50.8 52.4 56.3 48.9 62.0 46.0"
+    },
+    "5->9": {
+      "d": "M55.5 86.0 C62.1 82.1 69.2 78.6 75.8 75.4"
+    },
+    "5->8": {
+      "d": "M55.5 86.0 C57.2 71.2 59.9 57.1 62.0 46.0"
+    },
+    "6->10": {
+      "d": "M16.9 32.0 C18.4 25.6 20.2 19.5 21.6 13.8"
+    },
+    "7->11": {
+      "d": "M45.5 37.3 C57.8 31.5 69.3 25.2 79.2 19.7"
+    },
+    "8->11": {
+      "d": "M62.0 46.0 C67.9 36.3 74.0 25.9 79.2 19.7"
+    },
+    "9->12": {
+      "d": "M75.8 75.4 C80.4 74.5 85.5 74.1 89.5 74.3"
+    }
+  },
+  "direct_map_features": [
+    {
+      "id": "shortcut_forest_bridge",
+      "kind": "bridge",
+      "route_hint": "0->1",
+      "meaning": "跨水入林的捷径桥",
+      "already_in_base_map": true
+    },
+    {
+      "id": "forest_to_plain_bridge",
+      "kind": "bridge",
+      "route_hint": "1->4",
+      "meaning": "把森林机会接回平原主路",
+      "already_in_base_map": true
+    },
+    {
+      "id": "forest_exit_small_bridge",
+      "kind": "bridge",
+      "route_hint": "3->7",
+      "meaning": "冒险后回到平原的小桥",
+      "already_in_base_map": true
+    },
+    {
+      "id": "hill_steps",
+      "kind": "steps",
+      "route_hint": "3->6",
+      "meaning": "森林后的上坡台阶",
+      "already_in_base_map": true
+    },
+    {
+      "id": "highland_ladder",
+      "kind": "ladder",
+      "route_hint": "8->11",
+      "meaning": "上灯塔高地的梯子",
+      "already_in_base_map": true
+    },
+    {
+      "id": "cliffside_ladder",
+      "kind": "ladder",
+      "route_hint": "5->9",
+      "meaning": "崖边捷径的梯子",
+      "already_in_base_map": true
+    }
+  ],
+  "validation": {
+    "all_nodes_reachable_from_start": true,
+    "max_fanout": 2,
+    "terminal_node_count": 3,
+    "terminal_nodes": [
+      "10",
+      "11",
+      "12"
+    ],
+    "merge_nodes": [
+      "4",
+      "7",
+      "8",
+      "11"
+    ],
+    "max_node_water_ratio": 0.0
+  }
+}

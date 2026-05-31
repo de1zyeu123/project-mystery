@@ -1,0 +1,42 @@
+Deterministic SVG base map.
+
+Reason:
+AI-generated bitmap maps repeatedly preserved legacy connections that the user explicitly asked to delete.
+
+Source files:
+- docs/logic/v5_route_meaning_and_possibilities.md
+- assets/generated/life-road-atlas-v2/topology_blueprint_from_user_v2.json
+- assets/generated/life-road-atlas-v2/route_story_config_v5.json
+
+Hard forbidden connections:
+- no 10 <-> 7
+- no 1 <-> 2
+- no 3 <-> 4
+- node 9 has only one outgoing path, 9 -> 12
+
+Allowed route graph:
+- 0 -> 1
+- 0 -> 2
+- 1 -> 3
+- 1 -> 4
+- 3 -> 6
+- 6 -> 10
+- 3 -> 7
+- 7 -> 11
+- 4 -> 7
+- 4 -> 8
+- 8 -> 11
+- 2 -> 4
+- 2 -> 5
+- 5 -> 8
+- 5 -> 9
+- 9 -> 12
+
+Feature rules:
+- bridges only on 0 -> 1, 1 -> 3, 1 -> 4, 3 -> 7
+- ladder/stairs on 8 -> 11 and 5 -> 9
+- climb/stairs on 3 -> 6
+- no ladder on 4 -> 8
+
+Style:
+clean 3D board-game / cheerful platform map SVG, with cream stone roads, circular pads, green islands, blue water, cliffs, simple trees, mountains, and lighthouse.

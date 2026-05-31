@@ -1,0 +1,56 @@
+{
+  "functions": {
+    "api/roadmap-copy.js": {
+      "maxDuration": 30
+    },
+    "api/life-report.js": {
+      "maxDuration": 30
+    }
+  },
+  "redirects": [
+    {
+      "source": "/projectmystery",
+      "destination": "/projectmystery/",
+      "permanent": true
+    },
+    {
+      "source": "/notoast",
+      "destination": "/notoast/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/projectmystery/api/context",
+      "destination": "/api/context"
+    },
+    {
+      "source": "/projectmystery/api/health",
+      "destination": "/api/health"
+    },
+    {
+      "source": "/projectmystery/api/roadmap-copy",
+      "destination": "/api/roadmap-copy"
+    },
+    {
+      "source": "/projectmystery/api/life-report",
+      "destination": "/api/life-report"
+    },
+    {
+      "source": "/projectmystery/",
+      "destination": "/preview/life-roadmap-mvp/index.html"
+    },
+    {
+      "source": "/projectmystery/:path*",
+      "destination": "/preview/life-roadmap-mvp/:path*"
+    },
+    {
+      "source": "/notoast/",
+      "destination": "/preview/bujingjiu/index.html"
+    },
+    {
+      "source": "/notoast/:path*",
+      "destination": "/preview/bujingjiu/:path*"
+    }
+  ]
+}

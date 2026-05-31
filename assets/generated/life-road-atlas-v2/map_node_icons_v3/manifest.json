@@ -1,0 +1,192 @@
+{
+  "id": "map_node_icons_v3",
+  "source_sheet": "sprite_sheet_raw.png",
+  "raw_chroma_dir": "raw_chroma_sources",
+  "icons_dir": "icons",
+  "background_removed_from": "#ff00ff",
+  "size": [
+    1024,
+    1024
+  ],
+  "icons": [
+    {
+      "id": "direction_choice",
+      "filename": "icons/direction_choice.png",
+      "raw_chroma_source": "raw_chroma_sources/direction_choice.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "keep_lane",
+      "filename": "icons/keep_lane.png",
+      "raw_chroma_source": "raw_chroma_sources/keep_lane.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "stability_anchor",
+      "filename": "icons/stability_anchor.png",
+      "raw_chroma_source": "raw_chroma_sources/stability_anchor.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "opportunity_window",
+      "filename": "icons/opportunity_window.png",
+      "raw_chroma_source": "raw_chroma_sources/opportunity_window.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "wait_signal",
+      "filename": "icons/wait_signal.png",
+      "raw_chroma_source": "raw_chroma_sources/wait_signal.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "momentum_boost",
+      "filename": "icons/momentum_boost.png",
+      "raw_chroma_source": "raw_chroma_sources/momentum_boost.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "career_path",
+      "filename": "icons/career_path.png",
+      "raw_chroma_source": "raw_chroma_sources/career_path.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "safe_zone",
+      "filename": "icons/safe_zone.png",
+      "raw_chroma_source": "raw_chroma_sources/safe_zone.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "support_lighthouse",
+      "filename": "icons/support_lighthouse.png",
+      "raw_chroma_source": "raw_chroma_sources/support_lighthouse.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "relationship_contact",
+      "filename": "icons/relationship_contact.png",
+      "raw_chroma_source": "raw_chroma_sources/relationship_contact.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "detour_route",
+      "filename": "icons/detour_route.png",
+      "raw_chroma_source": "raw_chroma_sources/detour_route.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "risk_barrier",
+      "filename": "icons/risk_barrier.png",
+      "raw_chroma_source": "raw_chroma_sources/risk_barrier.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "slow_down",
+      "filename": "icons/slow_down.png",
+      "raw_chroma_source": "raw_chroma_sources/slow_down.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "wealth_safe_chest",
+      "filename": "icons/wealth_safe_chest.png",
+      "raw_chroma_source": "raw_chroma_sources/wealth_safe_chest.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "money_commitment",
+      "filename": "icons/money_commitment.png",
+      "raw_chroma_source": "raw_chroma_sources/money_commitment.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "lane_change",
+      "filename": "icons/lane_change.png",
+      "raw_chroma_source": "raw_chroma_sources/lane_change.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "accelerate_now",
+      "filename": "icons/accelerate_now.png",
+      "raw_chroma_source": "raw_chroma_sources/accelerate_now.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "mood_rest",
+      "filename": "icons/mood_rest.png",
+      "raw_chroma_source": "raw_chroma_sources/mood_rest.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "good_timing",
+      "filename": "icons/good_timing.png",
+      "raw_chroma_source": "raw_chroma_sources/good_timing.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "accelerate_later",
+      "filename": "icons/accelerate_later.png",
+      "raw_chroma_source": "raw_chroma_sources/accelerate_later.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "today_general",
+      "filename": "icons/today_general.png",
+      "raw_chroma_source": "raw_chroma_sources/today_general.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    },
+    {
+      "id": "near_exit",
+      "filename": "icons/near_exit.png",
+      "raw_chroma_source": "raw_chroma_sources/near_exit.png",
+      "meaning_source": "computed",
+      "visual_priority": "map_node",
+      "small_size_readability": "pass_64px_preview"
+    }
+  ],
+  "preview_64px": "preview_64px.png",
+  "meaning_source": "computed_from_rule_engine",
+  "count": 22
+}

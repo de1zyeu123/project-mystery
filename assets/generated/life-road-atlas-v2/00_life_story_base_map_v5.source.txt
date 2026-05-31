@@ -1,0 +1,51 @@
+Use the user's annotated topology sketch as reference.
+
+Regenerate a clean isometric 2.5D miniature board-game base map for the Project Mystery `人生路况` mobile app.
+
+Keep the same overall composition:
+- bottom-left start platform
+- forest and mountains in the upper-left
+- central grass island
+- river channels and waterfalls
+- upper-right lighthouse endpoint
+- lower-right island endpoint
+- bottom-middle route area
+
+Render the sketch topology as terrain:
+- 0 -> 1 shortcut bridge into forest
+- 0 -> 2 ordinary flat road
+- 1 -> 3 forest route with bridge crossing
+- 1 -> 4 bridge toward central route
+- 3 -> 6 uphill forest climb
+- 6 -> 10 mountain-side terminal route
+- 3 -> 7 small bridge into central plain
+- 7 -> 11 long plain road toward lighthouse
+- 4 -> 7 stable central route
+- 4 -> 8 faster route toward right-side highland
+- 8 -> 11 ladder or stairs to lighthouse highland
+- 2 -> 4 ordinary central route
+- 2 -> 5 cliff-side shortcut route
+- 5 -> 8 recovery route back to highland path
+- 5 -> 9 ladder or stairs from lower route
+- 9 -> 10 lower-right terminal route
+
+Style:
+- isometric 2.5D
+- rounded toy-like terrain
+- soft clay/plastic board-game aesthetic
+- warm cream background
+- moss green grass
+- sky-blue water
+- warm tan cliff layers
+- cream stone paths
+- cocoa-brown outlines
+- cherry, mustard, and mint accent flowers
+
+Remove all annotation overlays:
+- no yellow lines
+- no numbered circles
+- no blue labels
+- no text
+- no UI overlays
+- no characters
+- no logos

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>不敬酒人格</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="不敬酒人格测试">
+      <section id="inputScreen" class="screen input-screen">
+        <header class="input-hero">
+          <h1>不敬酒！<br /><span class="title-nowrap">测测你的酒桌人格</span></h1>
+        </header>
+
+        <form id="personaForm" class="input-card">
+          <label>
+            <span>性别</span>
+            <select id="gender" required>
+              <option value="male" selected>男</option>
+              <option value="female">女</option>
+            </select>
+          </label>
+          <label>
+            <span>出生日期</span>
+            <input id="birthDate" type="date" value="1988-01-07" required />
+          </label>
+          <label>
+            <span>出生时间</span>
+            <input id="birthTime" type="time" value="20:40" />
+          </label>
+          <label>
+            <span>出生地</span>
+            <input id="birthPlace" type="text" value="北京" placeholder="例如：北京" />
+          </label>
+          <button type="submit">生成我的不敬酒人格</button>
+        </form>
+      </section>
+
+      <section id="resultScreen" class="screen result-screen hidden">
+        <article class="share-card">
+          <header class="result-header">
+            <button id="backButton" type="button">重新输入</button>
+            <p>不敬酒人格测试</p>
+          </header>
+
+          <section class="art-panel">
+            <img id="personaArt" class="persona-art" alt="不敬酒人格水母" />
+            <section class="result-copy art-caption">
+              <p id="personaType" class="persona-type">酒桌反抗人格</p>
+              <h1 id="personaName">摔杯刚正面</h1>
+              <p id="oneLine" class="one-line">平时不响，一响全桌静音。</p>
+            </section>
+          </section>
+
+          <section class="result-sheet">
+            <div id="tagList" class="tag-list" aria-label="人格标签"></div>
+
+            <section class="summary-panel">
+              <h2>核心态度</h2>
+              <p id="attitudeText">别劝第三次，第三次就是事故。</p>
+            </section>
+
+            <section class="summary-panel muted-panel">
+              <h2>酒桌表现</h2>
+              <p id="behaviorText">你会直接把这一轮停掉。</p>
+            </section>
+
+            <details class="detail-panel">
+              <summary>完整解读</summary>
+              <div class="detail-body">
+                <section>
+                  <h3>你为什么会这样挡酒</h3>
+                  <p id="detailText"></p>
+                </section>
+                <section>
+                  <h3>高危瞬间</h3>
+                  <p id="riskText"></p>
+                </section>
+                <section>
+                  <h3>拒酒建议</h3>
+                  <p id="adviceText"></p>
+                </section>
+                <section>
+                  <h3>命理底色</h3>
+                  <p id="mingliText"></p>
+                </section>
+              </div>
+            </details>
+          </section>
+
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
