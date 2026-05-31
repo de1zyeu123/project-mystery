@@ -37,6 +37,15 @@ npx --yes vercel deploy --prod --yes
 Then publish project-level routes on the `de1zyeu.tech` owner project. Use rewrites so the browser stays on `de1zyeu.tech`:
 
 ```bash
+npx --yes vercel routes add "Project Mystery Assets" \
+  --cwd "/Users/zhen/Desktop/Agent/Online Financial Agent/website/web" \
+  --src "^/assets/generated/life-road-atlas-v2/(.*)$" \
+  --src-syntax regex \
+  --action rewrite \
+  --dest "https://<project-mystery-production-url>/assets/generated/life-road-atlas-v2/$1" \
+  --position start \
+  --yes
+
 npx --yes vercel routes add "Project Mystery Root" \
   --cwd "/Users/zhen/Desktop/Agent/Online Financial Agent/website/web" \
   --src "/projectmystery" \
