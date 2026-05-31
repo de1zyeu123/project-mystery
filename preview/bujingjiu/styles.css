@@ -380,9 +380,10 @@ select:focus {
 
 .result-screen.detail-open .detail-panel {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 1 0;
   flex-direction: column;
   min-height: 0;
+  height: 0;
   margin-top: 8px;
   overflow: hidden;
   border: 0;
@@ -433,8 +434,9 @@ select:focus {
 
 .result-screen.detail-open .detail-body {
   display: block;
-  flex: 1 1 auto;
-  min-height: 0;
+  flex: 0 0 auto;
+  height: calc(min(68dvh, 600px) - 72px);
+  max-height: calc(min(68dvh, 600px) - 72px);
   overflow-y: auto;
   overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
