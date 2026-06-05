@@ -17,6 +17,11 @@
       "source": "/notoast",
       "destination": "/notoast/",
       "permanent": true
+    },
+    {
+      "source": "/soccercard",
+      "destination": "/soccercard/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -51,6 +56,30 @@
     {
       "source": "/notoast/:path*",
       "destination": "/preview/bujingjiu/:path*"
+    },
+    {
+      "source": "/soccercard/",
+      "destination": "/preview/soccercard/index.html"
+    },
+    {
+      "source": "/soccercard/assets/:path*",
+      "destination": "/assets/:path*"
+    },
+    {
+      "source": "/soccercard/library",
+      "destination": "/preview/soccercard/index.html"
+    },
+    {
+      "source": "/soccercard/library/",
+      "destination": "/preview/soccercard/index.html"
+    },
+    {
+      "source": "/soccercard/library/:path*",
+      "destination": "/preview/soccercard/:path*"
+    },
+    {
+      "source": "/soccercard/:path*",
+      "destination": "/preview/soccercard/:path*"
     }
   ]
 }

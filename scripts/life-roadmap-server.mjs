@@ -410,11 +410,31 @@ function serveStatic(pathname, res) {
     res.end();
     return;
   }
+  if (pathname === "/soccercard") {
+    res.writeHead(302, { Location: "/soccercard/" });
+    res.end();
+    return;
+  }
   let cleanPath = pathname === "/" || pathname === "/projectmystery/"
     ? "/preview/life-roadmap-mvp/index.html"
     : decodeURIComponent(pathname.endsWith("/") ? `${pathname}index.html` : pathname);
   if (cleanPath.startsWith("/projectmystery/")) {
     cleanPath = `/preview/life-roadmap-mvp/${cleanPath.slice("/projectmystery/".length) || "index.html"}`;
+  }
+  if (cleanPath.startsWith("/soccercard/assets/")) {
+    cleanPath = `/assets/${cleanPath.slice("/soccercard/assets/".length)}`;
+  } else if (
+    cleanPath === "/soccercard/library"
+    || cleanPath === "/soccercard/library/"
+    || cleanPath === "/soccercard/library/index.html"
+  ) {
+    cleanPath = "/preview/soccercard/index.html";
+  } else if (cleanPath.startsWith("/soccercard/library/")) {
+    cleanPath = `/preview/soccercard/${cleanPath.slice("/soccercard/library/".length)}`;
+  } else if (cleanPath === "/soccercard/index.html" || cleanPath === "/soccercard/") {
+    cleanPath = "/preview/soccercard/index.html";
+  } else if (cleanPath.startsWith("/soccercard/")) {
+    cleanPath = `/preview/soccercard/${cleanPath.slice("/soccercard/".length)}`;
   }
   let filePath = normalize(join(ROOT, cleanPath));
   if (existsSync(filePath) && statSync(filePath).isDirectory()) {
