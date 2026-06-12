@@ -11,7 +11,7 @@ const RADAR_BASE = PUBLIC_ROUTE
   : "../../assets/others/player-radars-v1/";
 const QR_IMAGE_SRC = "./product-qr.png";
 const PRODUCT_URL = "https://de1zyeu.tech/soccercard/";
-const ASSET_VERSION = "20260612-card-copy-image-v1";
+const ASSET_VERSION = "20260612-latest-assets-v1";
 const ASSET_VERSION_SUFFIX = window.location.protocol === "file:" ? "" : `?v=${ASSET_VERSION}`;
 
 function normalizeAssetBase(base) {
