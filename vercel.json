@@ -5,6 +5,9 @@
     },
     "api/life-report.js": {
       "maxDuration": 30
+    },
+    "api/soccercard-track.js": {
+      "maxDuration": 10
     }
   },
   "redirects": [
@@ -60,6 +63,10 @@
     {
       "source": "/soccercard/",
       "destination": "/preview/soccercard/index.html"
+    },
+    {
+      "source": "/soccercard/api/track",
+      "destination": "/api/soccercard-track"
     },
     {
       "source": "/soccercard/assets/:path*",
