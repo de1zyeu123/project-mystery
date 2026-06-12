@@ -2,6 +2,7 @@ const { createHash } = require("node:crypto");
 const { readJsonBody, sendJson } = require("./_roadmap-core");
 
 const MAX_EVENTS = 20;
+const MAX_STORED_EVENTS = Number(process.env.SOCCERCARD_TRACK_MEMORY_LIMIT || 2000);
 const MAX_DETAIL_BYTES = 12000;
 const ALLOWED_EVENTS = new Set([
   "page_view",
@@ -30,6 +31,10 @@ const ALLOWED_EVENTS = new Set([
 module.exports = async (req, res) => {
   setCorsHeaders(res);
   if (req.method === "OPTIONS") return sendJson(res, { ok: true });
+  if (req.method === "GET" && isAdminRequest(req)) {
+    if (!isAuthorizedAdmin(req)) return sendJson(res, { error: "unauthorized" }, 401);
+    return sendJson(res, buildAdminSnapshot(req));
+  }
   if (req.method !== "POST") return sendJson(res, { error: "method_not_allowed" }, 405);
 
   try {
@@ -40,6 +45,7 @@ module.exports = async (req, res) => {
       .filter(Boolean);
 
     if (!events.length) return sendJson(res, { error: "invalid_event" }, 400);
+    recordEvents(events);
 
     console.log(JSON.stringify({
       type: "soccercard_analytics",
@@ -60,9 +66,25 @@ module.exports = async (req, res) => {
 
 function setCorsHeaders(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, X-Admin-Key");
   res.setHeader("Cache-Control", "no-store");
+}
+
+function getRequestUrl(req) {
+  return new URL(req.url || "/", `https://${req.headers.host || "localhost"}`);
+}
+
+function isAdminRequest(req) {
+  const url = getRequestUrl(req);
+  return url.searchParams.get("admin") === "1" || url.searchParams.get("mode") === "admin";
+}
+
+function isAuthorizedAdmin(req) {
+  const adminKey = process.env.SOCCERCARD_ADMIN_KEY || "";
+  if (!adminKey) return true;
+  const url = getRequestUrl(req);
+  return req.headers["x-admin-key"] === adminKey || url.searchParams.get("key") === adminKey;
 }
 
 function normalizeEvent(req, event) {
@@ -148,4 +170,165 @@ async function forwardEvents(events) {
     body: JSON.stringify({ type: "soccercard_analytics", events }),
   });
   if (!response.ok) throw new Error(`tracking_webhook_failed:${response.status}`);
+}
+
+function getStore() {
+  if (!globalThis.__soccercardAnalyticsMemory) {
+    globalThis.__soccercardAnalyticsMemory = {
+      createdAt: new Date().toISOString(),
+      updatedAt: "",
+      events: [],
+    };
+  }
+  return globalThis.__soccercardAnalyticsMemory;
+}
+
+function recordEvents(events) {
+  const store = getStore();
+  store.events.push(...events);
+  if (store.events.length > MAX_STORED_EVENTS) {
+    store.events.splice(0, store.events.length - MAX_STORED_EVENTS);
+  }
+  store.updatedAt = new Date().toISOString();
+}
+
+function buildAdminSnapshot(req) {
+  const url = getRequestUrl(req);
+  const hours = Math.max(1, Math.min(168, Number(url.searchParams.get("hours") || 24)));
+  const cutoff = Date.now() - hours * 60 * 60 * 1000;
+  const store = getStore();
+  const events = store.events.filter((event) => Date.parse(event.serverTs || "") >= cutoff);
+  const sessions = uniqueCount(events, "sessionId");
+  const visitors = uniqueCount(events, "visitorId");
+  const funnel = buildFunnel(events);
+  const share = buildShareSummary(events);
+
+  return {
+    ok: true,
+    mode: "memory",
+    generatedAt: new Date().toISOString(),
+    summary: {
+      events: events.length,
+      visitors,
+      sessions,
+      firstEventAt: events[0]?.serverTs || "",
+      lastEventAt: events[events.length - 1]?.serverTs || "",
+    },
+    retention: {
+      hours,
+      storedEvents: store.events.length,
+      maxEvents: MAX_STORED_EVENTS,
+      createdAt: store.createdAt,
+      updatedAt: store.updatedAt,
+    },
+    funnel,
+    topCards: rankCards(events),
+    sources: rankSources(events),
+    locations: rankLocations(events),
+    share,
+    recentEvents: events.slice(-40).reverse(),
+  };
+}
+
+function uniqueCount(events, key) {
+  return new Set(events.map((event) => event[key]).filter(Boolean)).size;
+}
+
+function buildFunnel(events) {
+  const steps = [
+    "page_view",
+    "form_start",
+    "generate_click",
+    "loading_view",
+    "result_view",
+    "share_click",
+    "poster_generated",
+    "poster_download",
+  ];
+  const entrySessions = Math.max(1, uniqueSessionsForEvent(events, steps[0]).size);
+  let previous = entrySessions;
+  return steps.map((event) => {
+    const sessions = uniqueSessionsForEvent(events, event).size;
+    const rateOfEntry = Math.round((sessions / entrySessions) * 100);
+    const dropoffFromPrevious = previous ? Math.max(0, Math.round(((previous - sessions) / previous) * 100)) : 0;
+    previous = sessions;
+    return { event, sessions, rateOfEntry, dropoffFromPrevious };
+  });
+}
+
+function uniqueSessionsForEvent(events, eventName) {
+  return new Set(
+    events
+      .filter((event) => event.event === eventName)
+      .map((event) => event.sessionId)
+      .filter(Boolean),
+  );
+}
+
+function buildShareSummary(events) {
+  return {
+    clicks: countEvent(events, "share_click"),
+    posters: countEvent(events, "poster_generated"),
+    downloads: countEvent(events, "poster_download"),
+    inboundSessions: uniqueCount(events.filter((event) => event.source?.parentShareId), "sessionId"),
+  };
+}
+
+function countEvent(events, eventName) {
+  return events.filter((event) => event.event === eventName).length;
+}
+
+function rankCards(events) {
+  const counts = new Map();
+  events
+    .filter((event) => ["generate_click", "result_view", "poster_generated", "gallery_card_open"].includes(event.event))
+    .forEach((event) => {
+      const role = event.details?.role || "";
+      const cardId = event.details?.cardId || "";
+      const key = role || (cardId ? `#${cardId}` : "");
+      if (!key) return;
+      const current = counts.get(key) || { label: key, count: 0, meta: cardId ? `Card ${cardId}` : "" };
+      current.count += 1;
+      counts.set(key, current);
+    });
+  return rankMap(counts);
+}
+
+function rankSources(events) {
+  const counts = new Map();
+  events.forEach((event) => {
+    const source = event.source || {};
+    const label = source.utmSource || hostname(source.referrer) || hostname(event.server?.referer) || "direct";
+    const current = counts.get(label) || { label, count: 0, meta: source.utmMedium || "" };
+    current.count += 1;
+    counts.set(label, current);
+  });
+  return rankMap(counts);
+}
+
+function rankLocations(events) {
+  const counts = new Map();
+  events.forEach((event) => {
+    const server = event.server || {};
+    const label = [server.country, server.region, server.city].filter(Boolean).join(" / ") || "unknown";
+    const current = counts.get(label) || { label, count: 0, meta: "" };
+    current.count += 1;
+    counts.set(label, current);
+  });
+  return rankMap(counts);
+}
+
+function rankMap(counts) {
+  return Array.from(counts.values())
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8);
+}
+
+function hostname(value) {
+  if (!value) return "";
+  try {
+    return new URL(value).hostname.replace(/^www\./, "");
+  } catch {
+    return clampString(String(value), 80);
+  }
 }

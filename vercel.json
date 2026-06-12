@@ -25,6 +25,11 @@
       "source": "/soccercard",
       "destination": "/soccercard/",
       "permanent": true
+    },
+    {
+      "source": "/soccercard/admin/",
+      "destination": "/soccercard/admin",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -63,6 +68,14 @@
     {
       "source": "/soccercard/",
       "destination": "/preview/soccercard/index.html"
+    },
+    {
+      "source": "/soccercard/admin",
+      "destination": "/preview/soccercard/admin.html"
+    },
+    {
+      "source": "/soccercard/api/admin",
+      "destination": "/api/soccercard-track?admin=1"
     },
     {
       "source": "/soccercard/api/track",
