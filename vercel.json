@@ -5,9 +5,6 @@
     },
     "api/life-report.js": {
       "maxDuration": 30
-    },
-    "api/soccercard-track.js": {
-      "maxDuration": 10
     }
   },
   "redirects": [
@@ -19,16 +16,6 @@
     {
       "source": "/notoast",
       "destination": "/notoast/",
-      "permanent": true
-    },
-    {
-      "source": "/soccercard",
-      "destination": "/soccercard/",
-      "permanent": true
-    },
-    {
-      "source": "/soccercard/admin/",
-      "destination": "/soccercard/admin",
       "permanent": true
     }
   ],
@@ -64,42 +51,6 @@
     {
       "source": "/notoast/:path*",
       "destination": "/preview/bujingjiu/:path*"
-    },
-    {
-      "source": "/soccercard/",
-      "destination": "/preview/soccercard/index.html"
-    },
-    {
-      "source": "/soccercard/admin",
-      "destination": "/preview/soccercard/admin.html"
-    },
-    {
-      "source": "/soccercard/api/admin",
-      "destination": "/api/soccercard-track?admin=1"
-    },
-    {
-      "source": "/soccercard/api/track",
-      "destination": "/api/soccercard-track"
-    },
-    {
-      "source": "/soccercard/assets/:path*",
-      "destination": "/assets/:path*"
-    },
-    {
-      "source": "/soccercard/library",
-      "destination": "/preview/soccercard/index.html"
-    },
-    {
-      "source": "/soccercard/library/",
-      "destination": "/preview/soccercard/index.html"
-    },
-    {
-      "source": "/soccercard/library/:path*",
-      "destination": "/preview/soccercard/:path*"
-    },
-    {
-      "source": "/soccercard/:path*",
-      "destination": "/preview/soccercard/:path*"
     }
   ]
 }
